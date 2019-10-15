@@ -67,8 +67,6 @@ function resolvaExpressao() {
 
     }
     else {
-        entreiAqui();
-
         ultimaOperacao.push(vetorDeOperadores[vetorDeOperadores.length - 1]);
         ultimaOperacao.push(operando)
         
@@ -78,22 +76,27 @@ function resolvaExpressao() {
 
         realizaOperacoesMatematicas();
 
+        /**
+         * Atualiza a variável expressão para atualizar a expressão dentro do input expressão.
+         * E depois zera a variável expressão para deixá-la apta para receber a nova expressão.
+         */
         expressao += ' ' + operando;
+        atualizaExpressao();
+        expressao = '';
 
         zeraVetor(vetorDeOperadores);
-
-        atualizaExpressao();
-
-        expressao = '';
-        operando = vetorDeOperandos[0];
-
-        atualizaAreaDeTrabalho();
+        
         /**
-         * PAREI AQUI --- ESTÁ DANDO ERRO
+         * Coloco o resultado da expressão na variável operando, pois ele pode ser o próximo
+         * operando, de fato. Mas pode ser sobrescrito se o usuário digitar outro dígito,
+         * iniciando a composição de outro número.
          */
-
+        operando = vetorDeOperandos[0];
         operandoEhResultadoAnterior = true;
-        console.log('operando atual: ' + operando);
+
+        zeraVetor(vetorDeOperandos);
+        
+        atualizaAreaDeTrabalho();
     }
 
 }
