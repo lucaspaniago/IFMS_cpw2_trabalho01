@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="atualizaAreaDeTrabalho()">
+    <div id="visorCalculadora">
+        <div id="expressao"></div>
+    </div>
+
+    <div id="calculadora">
+        <div id="visor">
+            <input type="text" name="expressao" id="expressao">
+            <input type="text" name="areaDeTrabalho" id="areaDeTrabalho">
+        </div>
+
+
+        <button onclick="escrevaDigito('0')" class="botaoCaluladora">0</button>
+        <button onclick="escrevaDigito('1')" class="botaoCaluladora">1</button>
+        <button onclick="escrevaDigito('2')" class="botaoCaluladora">2</button>
+        <button onclick="escrevaDigito('3')" class="botaoCaluladora">3</button>
+        <button onclick="escrevaDigito('4')" class="botaoCaluladora">4</button>
+        <button onclick="escrevaDigito('5')" class="botaoCaluladora">5</button>
+        <button onclick="escrevaDigito('6')" class="botaoCaluladora">6</button>
+        <button onclick="escrevaDigito('7')" class="botaoCaluladora">7</button>
+        <button onclick="escrevaDigito('8')" class="botaoCaluladora">8</button>
+        <button onclick="escrevaDigito('9')" class="botaoCaluladora">9</button>
+
+        <button onclick="escrevaOperador('+')" class="botaoCaluladora">+</button>
+        <button onclick="escrevaOperador('-')" class="botaoCaluladora">-</button>
+        <button onclick="escrevaOperador('*')" class="botaoCaluladora">*</button>
+        <button onclick="escrevaOperador('/')" class="botaoCaluladora">/</button>
+
+        <button onclick="apagar()" class="botaoCaluladora">del</button>
+
+        <button onclick="resolvaExpressao()" class="botaoCaluladora">=</button>
+
+
+    </div>
+
+    <div id="conteudoResultado">
+        <div id="resultado"></div>
+    </div>
+
+    <script src="../src/js/exercicio.js"></script>
+</body>
+
+</html>
