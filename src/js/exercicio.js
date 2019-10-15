@@ -1,6 +1,6 @@
 var expressao = '';
 var operando = '0';
-var vetorDeOperandos = ['0'];
+var vetorDeOperandos = [];
 //escrevaVetorNoLog(vetorDeOperandos);
 var vetorDeOperadores = [];
 var operandoEhResultadoAnterior = false;
@@ -61,10 +61,8 @@ function escrevaOperador(operador) {
 }
 
 function resolvaExpressao() {
-    console.log('operandoEhResultadoAnterior: ' + operandoEhResultadoAnterior);
-
     if (operandoEhResultadoAnterior) {
-
+        //======>preciso arrumar a ulttima operacao pra ela valer novamente quando apertar =
     }
     else {
         ultimaOperacao.push(vetorDeOperadores[vetorDeOperadores.length - 1]);
@@ -175,18 +173,7 @@ function realizaOperacoesMatematicas() {
 }
 
 function consolidaOperando() {
-
-    /**
-     * consolida o valor contido na variável operando - pois, se digitou um operador, o que
-     * veio antes é número - e o insere no vetor de operandos
-     */
-    //Verifica se é o primeiro operando inserido
-    if (vetorDeOperandos.length == 1 && vetorDeOperandos[0] == '0') {
-        vetorDeOperandos[0] = operando;
-    }
-    else {
-        vetorDeOperandos.push(operando);
-    }
+    vetorDeOperandos.push(operando);
 }
 
 function escrevaVetorNoLog(vetor) {
