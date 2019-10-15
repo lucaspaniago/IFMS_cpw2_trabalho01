@@ -91,7 +91,7 @@ function resolvaExpressao() {
         /**
          * PAREI AQUI --- ESTÁ DANDO ERRO
          */
-/*asdalks*/
+
         operandoEhResultadoAnterior = true;
         console.log('operando atual: ' + operando);
     }
