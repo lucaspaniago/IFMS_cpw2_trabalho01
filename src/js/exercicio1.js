@@ -1,11 +1,12 @@
 function fibonacci() {
     let quantidadeDeElementos = document.getElementById('quantidadeDeElementos').value;
     let conteudoResultado = document.getElementById('conteudoResultado');
-    //console.log('Quantidade de elementos: ' + quantidadeDeElementos);
 
-    //deleta a div com os resultados existentes e, posteriormente, cria outra div para conter os próximos resultados
-    let divResultadoAntiga = document.getElementById('resultado');
-    conteudoResultado.removeChild(divResultadoAntiga);
+    /**
+     * deleta a div com os resultados 
+     * existentes e, posteriormente, cria outra div para conter os próximos resultados
+     */
+    conteudoResultado.innerText = "";
     let divResultado = document.createElement('div');
     divResultado.setAttribute('id', 'resultado');
     conteudoResultado.appendChild(divResultado);
@@ -15,7 +16,7 @@ function fibonacci() {
 
     for (let i = 0; i < quantidadeDeElementos; i++) {
         if (i > 0) {
-            console.log("entrei aqui");
+            //console.log("entrei aqui");
             let proximoElemento = a + b;
             let spanComElemento = document.createElement("span");
             let elemento;
@@ -42,8 +43,10 @@ function fibonacci() {
             else {
                 elemento = document.createTextNode('0, ');
             }
-
+            
             spanComElemento.appendChild(elemento);
+
+            
             divResultado.appendChild(spanComElemento);
         }
     }

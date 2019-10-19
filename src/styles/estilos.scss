@@ -1,0 +1,197 @@
+@font-face {
+    font-family: "Padrao";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Decorativa";
+    src: url(../fonts/Galada-Regular.ttf);
+}
+
+body {
+    margin: 0px;
+
+}
+
+#header {
+    background-color: #08bfc6;
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+    font-size: 150%;
+    font-family: "Decorativa";
+    width: 100%;
+   
+    a{
+        display: table;
+        margin: 10px;
+    }
+
+    img {
+        vertical-align: middle;
+        padding: 10px 0px 10px 10px;
+
+    }
+
+
+}
+
+#conteiner {
+
+    text-align: center;
+    
+
+    .botao_exercicio {
+        font-size: 200%;
+        border: 1px solid black;
+        padding: 20px 0px 20px 0px;
+        margin: 20px;
+        color: white;
+        background-color: #0066ff;
+        font-family: "Padrao";
+        //margin: auto 0px;
+        
+    }
+    
+    
+
+    a:link {
+        text-decoration: none;
+        
+    }
+
+}
+
+#conteinerFormulario {
+    border: 1px solid black;
+    padding: 10px;
+    //margin-top: 80px;
+    border-radius: 5px;
+    width: 50%;
+    //height: 20%;
+    font-family: "Padrao";
+    //text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    * {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+
+    label {
+        font-family: "Padrao";
+        font-size: 120%;
+    }
+
+    input {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        font-size: 100%;
+        display: block;
+
+
+        &[type=text] {
+            width: 50%;
+        }
+
+
+    }
+
+
+    button {
+        font-weight: bold;
+        padding: 10px;
+        color: white;
+        background-color: #0080ff;
+        font-size: 100%;
+    }
+
+
+}
+
+
+#conteudoResultado {
+    width: 50%;
+    margin-top: 400px;
+    height: 10px;
+    font-family: "Padrao";
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    #resultado {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+
+}
+
+#calculadora {
+    border: 1px solid black;
+    margin-top: 150px;
+    border-radius: 5px;
+    width: 50%;
+    font-family: "Padrao";
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20%;
+
+    label {
+        font-family: "Padrao";
+        font-size: 120%;
+    }
+
+    * {
+        padding: 10px;
+
+    }
+
+    input {
+        display: block;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        font-size: 100%;
+        margin: auto;
+        margin-bottom: 10px;
+        background-color: #f7ffcf;
+    }
+
+    button {
+        font-weight: bold;
+        font-size: 100%;
+        color: white;
+        background-color: black;
+        margin-bottom: 10px;
+
+    }
+
+
+}
+
+/**@media only screen and (max-width: 600px){
+
+     {
+        width: 500px;
+       
+    }
+
+
+
+
+
+
+}
+*/

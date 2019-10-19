@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="../src/styles/estilos.css">
+    <title>Trabalho 1 - CPW2</title>
 </head>
 
 <body onload="atualizaAreaDeTrabalho()">
+
+
+    <div id="header">
+        <a href="../index.html"><img src="/src/img/seta.png" alt="Seta para voltar a página inicial"></a>
+        <h1>Exercício 5</h1>
+    </div>
+
+
     <div id="visorCalculadora">
         <div id="expressao"></div>
     </div>
 
     <div id="calculadora">
         <div id="visor">
+            <label for="expressao">Calculadora: </label>
             <input type="text" name="expressao" id="expressao">
             <input type="text" name="areaDeTrabalho" id="areaDeTrabalho">
         </div>
@@ -43,10 +53,11 @@
 
     </div>
 
+    <!--
     <div id="conteudoResultado">
         <div id="resultado"></div>
     </div>
-
+    -->
     <script src="../src/js/exercicio.js"></script>
 </body>
 
