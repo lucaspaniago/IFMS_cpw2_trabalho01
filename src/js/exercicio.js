@@ -5,8 +5,13 @@ var vetorDeOperandos = [];
 var vetorDeOperadores = [];
 var operandoEhResultadoAnterior = false;
 var ultimaOperacao = [];
+var semOperacao = false;
 
 function escrevaDigito(valor) {
+    if (semOperacao) {
+        operando = '';
+        semOperacao = false;
+    }
     /**
      * se (valor digitado == 0 && operando atual == '0') eu não faço quase nada. Então, negando isso,
      * tenho esse if abaixo:
@@ -38,7 +43,6 @@ function escrevaDigito(valor) {
 
 function escrevaOperador(operador) {
     if (querSobrescreverSinal()) {
-        entreiAqui();
         //retira último caracter da string expressao
         expressao = expressao.slice(0, -1);
         //adiciona o operador como último caracter na string expressao
@@ -61,16 +65,33 @@ function escrevaOperador(operador) {
 }
 
 function resolvaExpressao() {
-    if (operandoEhResultadoAnterior) {
-        //======>preciso arrumar a ulttima operacao pra ela valer novamente quando apertar =
+    if (!operandoEhResultadoAnterior && vetorDeOperadores.length == 0 && vetorDeOperandos.length == 0) {
+        expressao = operando;
+        atualizaExpressao();
+        expressao = '';
+        semOperacao = true;
     }
     else {
-        ultimaOperacao.push(vetorDeOperadores[vetorDeOperadores.length - 1]);
-        ultimaOperacao.push(operando)
-        
-        console.log('ultima operacao: ' + ultimaOperacao[0] + ' ' + ultimaOperacao[1]);
-        
-        consolidaOperando();
+        if (operandoEhResultadoAnterior && vetorDeOperadores.length == 0) {
+            consolidaOperando();
+            expressao = operando;
+
+            //insere operador no vetor de operadores
+            vetorDeOperadores.push(ultimaOperacao[0]);
+            escrevaVetorNoLog(vetorDeOperadores);
+            operando = ultimaOperacao[1];
+            consolidaOperando();
+            escrevaVetorNoLog(vetorDeOperandos);
+
+            expressao += ' ' + ultimaOperacao[0];
+
+        }
+        else {
+            ultimaOperacao[0] = vetorDeOperadores[vetorDeOperadores.length - 1];
+            ultimaOperacao[1] = operando;
+
+            consolidaOperando();
+        }
 
         realizaOperacoesMatematicas();
 
@@ -83,7 +104,7 @@ function resolvaExpressao() {
         expressao = '';
 
         zeraVetor(vetorDeOperadores);
-        
+
         /**
          * Coloco o resultado da expressão na variável operando, pois ele pode ser o próximo
          * operando, de fato. Mas pode ser sobrescrito se o usuário digitar outro dígito,
@@ -93,19 +114,46 @@ function resolvaExpressao() {
         operandoEhResultadoAnterior = true;
 
         zeraVetor(vetorDeOperandos);
-        
+
         atualizaAreaDeTrabalho();
     }
-
 }
 
 function apagar() {
-    operando = operando.slice(0, -1);
+
+    if (operando != 0) {
+        if (operando.slice(0, -1).length != 0) {
+            operando = operando.slice(0, -1);
+        }
+        else {
+            operando = 0;
+        }
+
+        atualizaAreaDeTrabalho();
+    }
+}
+
+function negar() {
+    operando = -operando;
     atualizaAreaDeTrabalho();
 }
 
 
+function acaoC() {
+    operando = 0;
+    operandoEhResultadoAnterior = false;
+    zeraVetor(vetorDeOperandos);
+    zeraVetor(vetorDeOperadores);
+    atualizaAreaDeTrabalho();
+}
 
+function acaoCE() {
+    operando = 0;
+    //operandoEhResultadoAnterior = false;
+    //zeraVetor(vetorDeOperandos);
+    //zeraVetor(vetorDeOperadores);
+    atualizaAreaDeTrabalho();
+}
 
 
 

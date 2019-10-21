@@ -15,6 +15,7 @@
     <div id="header">
         <a href="../index.html"><img src="/src/img/seta.png" alt="Seta para voltar a página inicial"></a>
         <h1>Exercício 5</h1>
+        <div class="calibragem"></div>
     </div>
 
 
@@ -22,36 +23,53 @@
         <div id="expressao"></div>
     </div>
 
-    <div id="calculadora">
-        <div id="visor">
-            <label for="expressao">Calculadora: </label>
-            <input type="text" name="expressao" id="expressao">
-            <input type="text" name="areaDeTrabalho" id="areaDeTrabalho">
+    <div id="conteudo">
+        <div id="calculadora">
+            <div id="visor">
+                <label for="expressao">Calculadora: </label>
+                <input type="text" name="expressao" id="expressao">
+                <input type="text" name="areaDeTrabalho" id="areaDeTrabalho">
+            </div>
+            
+            <div class="linhas">
+                <button onclick="acaoCE()" class="botaoCaluladora">CE</button>
+                <button onclick="acaoC()" class="botaoCaluladora">C</button>
+                <button onclick="apagar()" class="botaoCaluladora">del</button>
+                <button onclick="escrevaOperador('/')" class="botaoCaluladora">/</button>
+            </div>
+
+            <div class="linhas">
+                <button onclick="escrevaDigito('7')" class="botaoCaluladora">7</button>
+                <button onclick="escrevaDigito('8')" class="botaoCaluladora">8</button>
+                <button onclick="escrevaDigito('9')" class="botaoCaluladora">9</button>
+                <button onclick="escrevaOperador('*')" class="botaoCaluladora">*</button>
+            </div>
+
+            <div class="linhas">
+                <button onclick="escrevaDigito('4')" class="botaoCaluladora">4</button>
+                <button onclick="escrevaDigito('5')" class="botaoCaluladora">5</button>
+                <button onclick="escrevaDigito('6')" class="botaoCaluladora">6</button>
+                <button onclick="escrevaOperador('-')" class="botaoCaluladora">-</button>
+            </div>
+
+            <div class="linhas">
+                <button onclick="escrevaDigito('1')" class="botaoCaluladora">1</button>
+                <button onclick="escrevaDigito('2')" class="botaoCaluladora">2</button>
+                <button onclick="escrevaDigito('3')" class="botaoCaluladora">3</button>
+                <button onclick="escrevaOperador('+')" class="botaoCaluladora">+</button>
+            </div>
+
+            <div class="linhas">
+                <button onclick="negar()" class="botaoCaluladora">+-</button>
+                <button onclick="escrevaDigito('0')" class="botaoCaluladora">0</button>
+                <button onclick="escrevaDigito('.')" class="botaoCaluladora">,</button>
+                <button onclick="resolvaExpressao()" class="botaoCaluladora">=</button>
+            </div>
+
         </div>
-
-
-        <button onclick="escrevaDigito('0')" class="botaoCaluladora">0</button>
-        <button onclick="escrevaDigito('1')" class="botaoCaluladora">1</button>
-        <button onclick="escrevaDigito('2')" class="botaoCaluladora">2</button>
-        <button onclick="escrevaDigito('3')" class="botaoCaluladora">3</button>
-        <button onclick="escrevaDigito('4')" class="botaoCaluladora">4</button>
-        <button onclick="escrevaDigito('5')" class="botaoCaluladora">5</button>
-        <button onclick="escrevaDigito('6')" class="botaoCaluladora">6</button>
-        <button onclick="escrevaDigito('7')" class="botaoCaluladora">7</button>
-        <button onclick="escrevaDigito('8')" class="botaoCaluladora">8</button>
-        <button onclick="escrevaDigito('9')" class="botaoCaluladora">9</button>
-
-        <button onclick="escrevaOperador('+')" class="botaoCaluladora">+</button>
-        <button onclick="escrevaOperador('-')" class="botaoCaluladora">-</button>
-        <button onclick="escrevaOperador('*')" class="botaoCaluladora">*</button>
-        <button onclick="escrevaOperador('/')" class="botaoCaluladora">/</button>
-
-        <button onclick="apagar()" class="botaoCaluladora">del</button>
-
-        <button onclick="resolvaExpressao()" class="botaoCaluladora">=</button>
-
-
     </div>
+
+
 
     <!--
     <div id="conteudoResultado">

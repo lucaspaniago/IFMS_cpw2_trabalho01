@@ -11,6 +11,7 @@ body {
 }
 
 #header {
+  display: table;
   background-color: #08bfc6;
   padding: 5px 0px 5px 0px;
   text-align: center;
@@ -18,13 +19,22 @@ body {
   font-family: "Decorativa";
   width: 100%;
 }
+#header .calibragem {
+  display: table-cell;
+  width: 33%;
+}
 #header a {
-  display: table;
+  width: 33%;
+  display: table-cell;
   margin: 10px;
 }
 #header img {
   vertical-align: middle;
   padding: 10px 0px 10px 10px;
+}
+
+#conteudo {
+  display: block;
 }
 
 #conteiner {
@@ -46,13 +56,11 @@ body {
 #conteinerFormulario {
   border: 1px solid black;
   padding: 10px;
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 20px;
   border-radius: 5px;
-  width: 50%;
   font-family: "Padrao";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 #conteinerFormulario * {
   margin-bottom: 10px;
@@ -67,10 +75,9 @@ body {
   border-radius: 5px;
   border: 1px solid #cccccc;
   font-size: 100%;
+  width: 70%;
+  max-width: 400px;
   display: block;
-}
-#conteinerFormulario input[type=text] {
-  width: 50%;
 }
 #conteinerFormulario button {
   font-weight: bold;
@@ -81,35 +88,35 @@ body {
 }
 
 #conteudoResultado {
-  width: 50%;
-  margin-top: 400px;
-  height: 10px;
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 30px;
   font-family: "Padrao";
   text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 #conteudoResultado #resultado {
+  width: 80%;
+  margin: 0px auto;
   border: 1px solid black;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
 }
 
 #calculadora {
+  display: table;
   border: 1px solid black;
-  margin-top: 150px;
   border-radius: 5px;
-  width: 50%;
+  width: 80%;
   font-family: "Padrao";
   text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 20%;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+#calculadora .linhas {
+  display: table-row;
+}
+#calculadora .botaoCaluladora {
+  width: 80px;
 }
 #calculadora label {
   font-family: "Padrao";
@@ -136,19 +143,20 @@ body {
   margin-bottom: 10px;
 }
 
-/**@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
+  #conteinerFormulario input {
+    width: 80%;
+  }
+  #conteinerFormulario button {
+    width: 80%;
+  }
 
-     {
-        width: 500px;
-
-    }
-
-
-
-
-
-
+  #calculadora input {
+    width: 80%;
+  }
+  #calculadora .botaoCaluladora {
+    width: 20%;
+  }
 }
-*/
 
 /*# sourceMappingURL=estilos.css.map */

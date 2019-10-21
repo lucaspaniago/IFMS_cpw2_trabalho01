@@ -17,16 +17,20 @@
     <div id="header">
         <a href="../index.html"><img src="/src/img/seta.png" alt="Seta para voltar a página inicial"></a>
         <h1>Exercício 1</h1>
+        <div class="calibragem"></div>
     </div>
 
+    <div id="conteudo">
+        <div id="conteinerFormulario">
+            <label for="quantidadeDeElementos">Digite a quantidade de elementos que deseja visualizar:</label>
+            <input name="quantidadeDeElementos" id="quantidadeDeElementos" type="number">
+            <button onclick="fibonacci()">Visualizar</button>
+        </div>
 
-    <div id="conteinerFormulario">
-        <label for="quantidadeDeElementos">Digite a quantidade de elementos que deseja visualizar:</label>
-        <input name="quantidadeDeElementos" id="quantidadeDeElementos" type="number">
-        <button onclick="fibonacci()">Visualizar</button>
+        
+        <div id="conteudoResultado"></div>
+    
     </div>
-
-    <div id="conteudoResultado"></div>
 
     <script src="../src/js/exercicio1.js"></script>
 </body>
